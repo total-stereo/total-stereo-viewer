@@ -83,15 +83,19 @@ $(document).on('turbolinks:load', function() {
     // area, this is more useful than view.width/height because
     // it handles resolution
     
-    var rendererRatio = parent.clientWidth / parent.clientHeight;
-    var newHeight = parent.clientHeight;
-    var newWidth = parent.clientWidth;
+    
+    var newHeight = window.innerHeight;
+    var newWidth = window.innerWidth;
+    var rendererRatio = newWidth / newHeight;
     if (rendererRatio > 1 && imgratio > 1 ){
       newWidth = newHeight*imgratio;
+      console.log("Case A");
     }else{
-      newHeight = newHeight / imgratio;
+      newHeight = newWidth / imgratio;
+      console.log("Case B");
     }
     
+    console.log(rendererRatio + " " + imgratio + " " + (newWidth / newHeight));
     
   	// Resize the renderer
   	app.renderer.resize(newWidth, newHeight);
