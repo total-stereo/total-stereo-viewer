@@ -1,0 +1,21 @@
+<div class="container show">
+
+<h1><%=@file_name%></h1>
+<% if @prev %>
+<%= link_to "<<", show_path(i: @prev), class:"prev-button"%>
+<% end %>
+<% if @next%>
+  <%= link_to ">>", show_path(i: @next), class:"next-button"%>
+<% end %>
+<button type="button" class="btn btn-primary" id="startButton">Sensorsteuerung aktivieren</button>
+
+<div id="stereoImage" data-imgpath=<%=asset_path(@imgpath)%> data-mappath=<%=asset_path(@mappath)%> ></div>
+
+    <canvas id="pixiCanvas" width="150" height="150" style="border:1px; border-style: solid;">
+        Something is not working
+        <img src="<%=asset_path(@mappath)%>" width="150" height="150" alt="Depth map test" />
+        
+    </canvas>
+    
+
+</div>

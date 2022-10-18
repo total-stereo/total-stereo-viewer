@@ -1,0 +1,21 @@
+div.container.index
+  h1 Gallerie
+
+
+  /ul
+    - @image_names.each_with_index do |image_name, i|
+      li
+        = image_name
+        = link_to image_name, show_path(i: i) 
+   
+   
+  - @image_names_with_index = @image_names.each_with_index.to_a
+  - @image_name_slices = @image_names_with_index.each_slice(3).to_a
+
+  - @image_name_slices.each do |sublist|
+    div.row
+      - sublist.each do |image_name, index|
+        div.col-sm
+          a href=show_path(i: index)
+            img.w-100.shadow-1-strong.rounded.mb-4 src=asset_path("stereo_imgs/thumbs/#{image_name}")
+  
