@@ -41,13 +41,13 @@ $(document).on('turbolinks:load', function() {
   app.stage.filters = [displacementFilter];
 
   window.onmousemove = function(e) {
-    displacementFilter.scale.x = (window.innerWidth / 2 - e.clientX) /40;
-    displacementFilter.scale.y = (window.innerHeight / 2 - e.clientY) /40;
+    displacementFilter.scale.x = (window.innerWidth / 2 - e.clientX) /30;
+    displacementFilter.scale.y = (window.innerHeight / 2 - e.clientY) /30;
     //console.log(displacementFilter.scale.x + " " + displacementFilter.scale.y);
   };
   window.ontouchmove = function(e) {
-    displacementFilter.scale.x = -(window.innerWidth / 2 - e.pageX) /30;
-    displacementFilter.scale.y = -(window.innerHeight / 2 - e.pageY) /30;
+    displacementFilter.scale.x = -(window.innerWidth / 2 - e.pageX) /20;
+    displacementFilter.scale.y = -(window.innerHeight / 2 - e.pageY) /20;
     //console.log(displacementFilter.scale.x + " " + displacementFilter.scale.y);
   };
 
@@ -124,8 +124,8 @@ $(document).on('turbolinks:load', function() {
           initFrontToBack = frontToBack;
         }
       
-        displacementFilter.scale.x = -(initLeftToRight - leftToRight) % 360;
-        displacementFilter.scale.y = -(initFrontToBack - frontToBack) % 360;
+        displacementFilter.scale.x = -(initLeftToRight - leftToRight) % 360 * 2;
+        displacementFilter.scale.y = -(initFrontToBack - frontToBack) % 360 * 2;
       
 
         //console.log(" " + displacementFilter.scale.y + " " + -(initFrontToBack - frontToBack));
