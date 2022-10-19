@@ -32,27 +32,28 @@
 }
 
 .about-upper-left-corner{
-  border-radius: 0 0 250px 0;
-  min-height: 200px;
+  border-radius: 0 0 150px 0;
 }
 .about-lower-left-corner{
   border-radius: 0 250px 0 0;
-  min-height: 200px;
+  min-height: 250px;
 }
 
 .black-nav-element{
   background-color: black;
-  color: yellow;
+  color: #ffea00;
   text-align: center;
-  padding-top: 10%;
-  padding-bottom: 10%;
   display:flex;
   align-items: center;
  > a, > a:hover {
     text-decoration: none;
-    color: yellow;
+    color: #ffea00;
   }
 }
 .black-nav-element:hover{
   background-color: #115;
+}
+
+img.total-stereo-logo {
+  max-height: 10em;
 }

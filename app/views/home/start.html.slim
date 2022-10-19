@@ -1,10 +1,10 @@
 div class="container start"
   .row 
-    .col-md-3.about-upper-left-corner.black-nav-element
+    .col-3.about-upper-left-corner.black-nav-element
       a href="/about" About
-    .col-md-1
-    .col-md-3
-      img src=asset_path("Total_Stereo.png") alt="Logo: Total Stereo" style="max-height: 15em;"
+    .col-1
+    .col-3
+      img src=asset_path("Total_Stereo.png") alt="Logo: Total Stereo" class="total-stereo-logo"
       
   .row
     h1 Total Stereo
@@ -20,23 +20,23 @@ div class="container start"
           h5 class="card-title"  Fotos
   
   .row
-    .col-md-3
-    .col-md-6
+    .col-3
+    .col-6
       div id="carouselAnimation" class="carousel slide carousel-fade carousel-dark" data-bs-ride="carousel" data-bs-touch="false"
         - ["box_slides/box_01.jpg"].each_with_index do |image_name, index|
           div.carousel-item data-bs-interval="700" class=(index == 0 ? "active" :"") 
             a href="/index/dia"
               img.d-block.w-100 src=asset_path(image_name)
               div.carousel-caption.d-none.d-md-block
-    .col-md-1   
-    .col-md-2.entrypoint-label-col.black-nav-element
+    .col-1   
+    .col-2.entrypoint-label-col.black-nav-element
       h5  Dias
       
   .row
-    .col-md-2.entrypoint-label-col-left.black-nav-element
+    .col-2.entrypoint-label-col-left.black-nav-element
       h5  2.5D Fotos
-    .col-md-1
-    .col-md-6
+    .col-1
+    .col-6
       div id="carouselAnimation" class="carousel slide carousel-fade carousel-dark" data-bs-ride="carousel" data-bs-touch="false"
         - ["stereoscope_slides/stereoscope_01.jpg"].each_with_index do |image_name, index|
           div.carousel-item data-bs-interval="700" class=(index == 0 ? "active" :"") 
@@ -45,8 +45,8 @@ div class="container start"
               div.carousel-caption.d-none.d-md-block
   
   .row
-    .col-md-3
-    .col-md-6
+    .col-3
+    .col-6
       div id="carouselAnimation" class="carousel slide carousel-fade carousel-dark" data-bs-ride="carousel" data-bs-touch="false"
         - ["anaglyph_slides/anaglyph_01.jpg"].each_with_index do |image_name, index|
           div.carousel-item data-bs-interval="700" class=(index == 0 ? "active" :"") 
@@ -54,8 +54,8 @@ div class="container start"
               img.d-block.w-100 src=asset_path(image_name)
               div.carousel-caption.d-none.d-md-block
     
-    .col-md-1   
-    .col-md-2.entrypoint-label-col.black-nav-element
+    .col-1   
+    .col-2.entrypoint-label-col.black-nav-element
       h5  Rot-Cyan
   /.row
     h3 Wolfgang Schreiber 
@@ -68,5 +68,5 @@ div class="container start"
   
 
   .row
-    .col-md-3.about-lower-left-corner.black-nav-element
+    .col-3.about-lower-left-corner.black-nav-element
       a href="/about-collection" Über die Sammlung
