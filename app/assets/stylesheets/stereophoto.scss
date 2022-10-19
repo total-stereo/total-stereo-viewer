@@ -51,7 +51,10 @@
   align-items: center;
   text-decoration: none; 
   justify-content: center;
- > a, > a:hover {
+  font-size: 150%;
+  padding-right: 30px;
+  padding-left: 30px;
+  > a, > a:hover {
     text-decoration: none;
     color: #ffea00;
   }
