@@ -1,0 +1,33 @@
+.container.show
+  .row
+    .col-3
+      a href="/index/#{@mode}"
+        .about-upper-left-corner.black-nav-element
+          | Übersicht
+    .col-1
+    .col-3
+      h1
+        =@file_name
+      - if @prev
+        = link_to "<<", show_path(i: @prev, mode: @mode), class:"prev-button"
+      - if @next
+        = link_to ">>", show_path(i: @next, mode: @mode), class:"next-button"
+      - unless @mode == "dia"
+        = link_to "Zu Dia", show_path(i: @index, mode: "dia"), class: "btn btn-info"
+      - unless @mode == "stereo"
+        = link_to "Zu Stereo", show_path(i: @index, mode: "stereo"), class: "btn btn-info"
+      - unless @mode == "anaglyph"
+        = link_to "Zu Anaglyph", show_path(i: @index, mode: "anaglyph"), class: "btn btn-info"
+   
+  - if @mode == "stereo"
+    .row
+      button#startButton.btn.btn-primary[type="button"] Sensorsteuerung aktivieren
+      div id="stereoImage" data-imgpath=asset_path(@imgpath) data-mappath=asset_path(@mappath)
+      canvas#pixiCanvas[width="150" height="150"]
+        |  Something is not working 
+  - elsif @mode == "anaglyph"
+    .row
+      img src=asset_path(@imgpath)
+  - elsif @mode == "dia"
+    .row
+      img src=asset_path(@imgpath)

@@ -45,10 +45,12 @@
 .black-nav-element{
   background-color: black;
   color: #ffea00;
+  font-family: "PermanentMarker";
   text-align: center;
   display:flex;
   align-items: center;
   text-decoration: none; 
+  justify-content: center;
  > a, > a:hover {
     text-decoration: none;
     color: #ffea00;
@@ -70,6 +72,11 @@ img.total-stereo-logo {
   width: 330px;
 }
 
-.container.index .row{
+.container.index .row, .container.show .row,
+.container.about .row,.container.about-collection .row,{
   margin-bottom: 1em;
+}
+
+h1, h2, h3, h4, h5{
+  font-family: "PermanentMarker";
 }

@@ -15,6 +15,6 @@ div.container.index
       div.row
         - sublist.each do |image_name, index|
           div.col-sm
-            a href=show_path(i: index)
+            a href=show_path(i: index, mode: @mode)
               img.w-100.shadow-1-strong.rounded.mb-4 src=asset_path("#{@mode}_imgs/thumbs/#{image_name}")
 

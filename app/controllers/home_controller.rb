@@ -21,12 +21,24 @@ class HomeController < ApplicationController
 
   def show
     index = params[:i].to_i
-    @file_name = stereo_image_names[index]
-    @imgpath = "stereo_imgs/images/" + @file_name
-    @mappath = "stereo_imgs/depth_maps/" + @file_name
+    @mode = params[:mode] || "stereo"
+    
+    if @mode == "stereo"
+      @file_name = stereo_image_names[index]
+      @imgpath = "stereo_imgs/images/" + @file_name
+      @mappath = "stereo_imgs/depth_maps/" + @file_name
+    elsif @mode == "dia"
+      @file_name = dia_image_names[index]
+      @imgpath = "dia_imgs/images/" + @file_name
+    elsif @mode == "anaglyph"
+      @file_name = anaglyph_image_names[index]
+      @imgpath = "anaglyph_imgs/images/" + @file_name
+    end
+    
     
     @prev = index > 0 ? index - 1 : nil
     @next = index < stereo_image_names.size - 1 ? index+1 : nil 
+    @index = index
     
     #render "show", layout: false
   end

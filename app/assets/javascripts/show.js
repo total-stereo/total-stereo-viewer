@@ -84,8 +84,8 @@ $(document).on('turbolinks:load', function() {
     // it handles resolution
     
     
-    var newHeight = window.innerHeight;
-    var newWidth = window.innerWidth;
+    var newHeight = window.innerHeight-20;
+    var newWidth = window.innerWidth-20;
     var rendererRatio = newWidth / newHeight;
     if (rendererRatio > 1 && imgratio > 1 ){
       newWidth = newHeight*imgratio;
