@@ -32,7 +32,9 @@
 # Ignore master key for decrypting credentials and more.
 /config/master.key
 
+.DS_Store
 
 /app/assets/images/stereo_imgs
-app/assets/images/dia_imgs
+/app/assets/images/dia_imgs
+/app/assets/images/anaglyph_imgs
 node_modules
