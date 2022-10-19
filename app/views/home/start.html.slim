@@ -1,17 +1,14 @@
 div class="container start"
   .row 
-    .col-3.about-upper-left-corner.black-nav-element
-      a href="/about" About
+    .col-3
+      a href="/about"
+        div.about-upper-left-corner.black-nav-element
+          | About
     .col-1
     .col-3
       img src=asset_path("Total_Stereo.png") alt="Logo: Total Stereo" class="total-stereo-logo"
       
-  .row
-    h1 Total Stereo
-  
-    | Dieser Prototyp entstand im Herbst 2022 im Rahmen des Hackathons #{link_to("creating new dimensions","https://creating-new-dimensions.org")}.
-  
-    br
+
   /.row
     a href="/index"
       div.card.text-bg-dark style="width: 18rem;"
@@ -29,12 +26,16 @@ div class="container start"
               img.d-block.w-100 src=asset_path(image_name)
               div.carousel-caption.d-none.d-md-block
     .col-1   
-    .col-2.entrypoint-label-col.black-nav-element
-      h5  Dias
+    .col-2
+      a href="/index/dia"
+        .entrypoint-label-col.black-nav-element
+          span Dias
       
   .row
-    .col-2.entrypoint-label-col-left.black-nav-element
-      h5  2.5D Fotos
+    .col-2
+      a href="/index/stereo"
+        .entrypoint-label-col-left.black-nav-element
+          span 2.5D Fotos
     .col-1
     .col-6
       div id="carouselAnimation" class="carousel slide carousel-fade carousel-dark" data-bs-ride="carousel" data-bs-touch="false"
@@ -55,8 +56,10 @@ div class="container start"
               div.carousel-caption.d-none.d-md-block
     
     .col-1   
-    .col-2.entrypoint-label-col.black-nav-element
-      h5  Rot-Cyan
+    .col-2
+      a href="/index/anaglyph"
+        .entrypoint-label-col.black-nav-element
+          span Rot-Cyan
   /.row
     h3 Wolfgang Schreiber 
     h3 Über die Aufnahmen
@@ -68,5 +71,7 @@ div class="container start"
   
 
   .row
-    .col-3.about-lower-left-corner.black-nav-element
-      a href="/about-collection" Über die Sammlung
+    .col-3
+      a href="/about-collection"
+        div.about-lower-left-corner.black-nav-element
+          | Über die Sammlung

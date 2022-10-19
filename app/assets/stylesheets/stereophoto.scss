@@ -25,14 +25,17 @@
   
 .entrypoint-label-col {
   border-radius: 250px 0 0 250px;
+  height: 100%;
 }
 
 .entrypoint-label-col-left{
   border-radius: 0 250px 250px 0;
+  height: 100%;
 }
 
 .about-upper-left-corner{
   border-radius: 0 0 150px 0;
+  height: 100%;
 }
 .about-lower-left-corner{
   border-radius: 0 250px 0 0;
@@ -45,9 +48,13 @@
   text-align: center;
   display:flex;
   align-items: center;
+  text-decoration: none; 
  > a, > a:hover {
     text-decoration: none;
     color: #ffea00;
+  }
+  span {
+    text-decoration: none;
   }
 }
 .black-nav-element:hover{
@@ -56,4 +63,13 @@
 
 img.total-stereo-logo {
   max-height: 10em;
+}
+
+.carousel-item img {
+  height: 250px;
+  width: 330px;
+}
+
+.container.index .row{
+  margin-bottom: 1em;
 }
