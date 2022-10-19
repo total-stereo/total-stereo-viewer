@@ -1,29 +1,72 @@
 div class="container start"
+  .row 
+    .col-md-3.about-upper-left-corner.black-nav-element
+      a href="/about" About
+    .col-md-1
+    .col-md-3
+      img src=asset_path("Total_Stereo.png") alt="Logo: Total Stereo" style="max-height: 15em;"
+      
+  .row
+    h1 Total Stereo
+  
+    | Dieser Prototyp entstand im Herbst 2022 im Rahmen des Hackathons #{link_to("creating new dimensions","https://creating-new-dimensions.org")}.
+  
+    br
+  /.row
+    a href="/index"
+      div.card.text-bg-dark style="width: 18rem;"
+        img src=asset_path("stolln1.jpg") class="card-img" alt="Foto des Rothschönberger Stolln"
+        div class="card-img-overlay"
+          h5 class="card-title"  Fotos
+  
+  .row
+    .col-md-3
+    .col-md-6
+      div id="carouselAnimation" class="carousel slide carousel-fade carousel-dark" data-bs-ride="carousel" data-bs-touch="false"
+        - ["box_slides/box_01.jpg"].each_with_index do |image_name, index|
+          div.carousel-item data-bs-interval="700" class=(index == 0 ? "active" :"") 
+            a href="/index/dia"
+              img.d-block.w-100 src=asset_path(image_name)
+              div.carousel-caption.d-none.d-md-block
+    .col-md-1   
+    .col-md-2.entrypoint-label-col.black-nav-element
+      h5  Dias
+      
+  .row
+    .col-md-2.entrypoint-label-col-left.black-nav-element
+      h5  2.5D Fotos
+    .col-md-1
+    .col-md-6
+      div id="carouselAnimation" class="carousel slide carousel-fade carousel-dark" data-bs-ride="carousel" data-bs-touch="false"
+        - ["stereoscope_slides/stereoscope_01.jpg"].each_with_index do |image_name, index|
+          div.carousel-item data-bs-interval="700" class=(index == 0 ? "active" :"") 
+            a href="/index/stereo"
+              img.d-block.w-100 src=asset_path(image_name)
+              div.carousel-caption.d-none.d-md-block
+  
+  .row
+    .col-md-3
+    .col-md-6
+      div id="carouselAnimation" class="carousel slide carousel-fade carousel-dark" data-bs-ride="carousel" data-bs-touch="false"
+        - ["anaglyph_slides/anaglyph_01.jpg"].each_with_index do |image_name, index|
+          div.carousel-item data-bs-interval="700" class=(index == 0 ? "active" :"") 
+            a href="/index/anaglyph"
+              img.d-block.w-100 src=asset_path(image_name)
+              div.carousel-caption.d-none.d-md-block
+    
+    .col-md-1   
+    .col-md-2.entrypoint-label-col.black-nav-element
+      h5  Rot-Cyan
+  /.row
+    h3 Wolfgang Schreiber 
+    h3 Über die Aufnahmen
+    | Die Stereoaufnahmen des #{link_to("Rothschönberger Stolln","https://de.wikipedia.org/wiki/Rothschönberger_Stolln")} entstanden zwischen 1980 und 1986 bei illegalen Fototouren von Wolfgang Schreiber (*1940.05.11. in Leubsdorf, † 2005.12.05 in Hainichen).
+    br
+    | Digitalisierung: Sächsische Landesbibliothek - Staats- und Universitätsbibliothek Dresden, Deutsche Fotothek  
+    h3 Rechtliches
+    | Die Stereoaufnahmen des Rothschönberger Stolln wurden von der #{link_to "Saxonia-Freiberg-Stiftung","http://www.saxonia-freiberg-stiftung.de"} unter der #{link_to("CC BY-SA","https://creativecommons.org/licenses/by-sa/3.0/")} Lizenz ferfügbar gemacht.
+  
 
-  h1 Stereo goes 3D
-  
-  | Dieser Prototyp entstand im Herbst 2022 im Rahmen des Hackathons #{link_to("creating new dimensions","https://creating-new-dimensions.org")}.
-  
-  
-  br
-
-  a href="/index"
-    div.card.text-bg-dark style="width: 18rem;"
-      img src=asset_path("stolln1.jpg") class="card-img" alt="Foto des Rothschönberger Stolln"
-      div class="card-img-overlay"
-        h5 class="card-title" Zu den Fotos
-   
-  br
-  
-  h3 Wolfgang Schreiber 
-  
-  
-  h3 Über die Aufnahmen
-  | Die Stereoaufnahmen des #{link_to("Rothschönberger Stolln","https://de.wikipedia.org/wiki/Rothschönberger_Stolln")} entstanden zwischen 1980 und 1986 bei illegalen Fototouren von Wolfgang Schreiber (*1940.05.11. in Leubsdorf, † 2005.12.05 in Hainichen).
-  br
-  | Digitalisierung: Sächsische Landesbibliothek - Staats- und Universitätsbibliothek Dresden, Deutsche Fotothek
-  
-  
-  h3 Rechtliches
-  | Die Stereoaufnahmen des Rothschönberger Stolln wurden von der #{link_to "Saxonia-Freiberg-Stiftung","http://www.saxonia-freiberg-stiftung.de"} unter der #{link_to("CC BY-SA","https://creativecommons.org/licenses/by-sa/3.0/")} Lizenz ferfügbar gemacht.
-  
+  .row
+    .col-md-3.about-lower-left-corner.black-nav-element
+      a href="/about-collection" Über die Sammlung
