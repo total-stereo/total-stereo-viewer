@@ -4,20 +4,20 @@
       a href="/index/#{@mode}"
         .about-upper-left-corner.black-nav-element
           | Übersicht
-    .col-1
-    .col-3
+    .col-6
       h1
         =@file_name
       - if @prev
-        = link_to "<<", show_path(i: @prev, mode: @mode), class:"prev-button"
+        = link_to "<<", show_path(i: @prev, mode: @mode), class:"prev-button btn btn-stereo"
       - if @next
-        = link_to ">>", show_path(i: @next, mode: @mode), class:"next-button"
+        = link_to ">>", show_path(i: @next, mode: @mode), class:"next-button btn btn-stereo "
+    .col-3
       - unless @mode == "dia"
-        = link_to "Zu Dia", show_path(i: @index, mode: "dia"), class: "btn btn-info"
+        = link_to "Zu Dia", show_path(i: @index, mode: "dia"), class: "btn btn-stereo"
       - unless @mode == "stereo"
-        = link_to "Zu Stereo", show_path(i: @index, mode: "stereo"), class: "btn btn-info"
+        = link_to "Zu Stereo", show_path(i: @index, mode: "stereo"), class: "btn btn-stereo"
       - unless @mode == "anaglyph"
-        = link_to "Zu Anaglyph", show_path(i: @index, mode: "anaglyph"), class: "btn btn-info"
+        = link_to "Zu Anaglyph", show_path(i: @index, mode: "anaglyph"), class: "btn btn-stereo"
    
   - if @mode == "stereo"
     .row
