@@ -58,6 +58,7 @@ $(document).on('turbolinks:load', function() {
   var initLeftToRight;
 
   var mobileDevice = false;
+  var gyroControlActive = false;
   try {
     DeviceMotionEvent;
     mobileDevice = true;
@@ -123,9 +124,10 @@ $(document).on('turbolinks:load', function() {
         var rotateDegrees = screenAdjustedEvent.alpha;
         var frontToBack = screenAdjustedEvent.beta;
         var leftToRight = screenAdjustedEvent.gamma;
-        if(initLeftToRight === undefined){
+        if(gyroControlActive == false){
           initLeftToRight = leftToRight;
           initFrontToBack = frontToBack;
+          gyroControlActive = true;
         }
       
         displacementFilter.scale.x = -(initLeftToRight - leftToRight) % 360 * 2;
@@ -143,10 +145,10 @@ $(document).on('turbolinks:load', function() {
     
   function enableSensor(){
   	$("#overlay").remove();
-    $("#startButton").prop("disabled",true);
+    //$("#startButton").prop("disabled",true);
+    $("#startButton").html("Sensorsteuerung zurücksetzen");
   
-  
-    if (mobileDevice && typeof DeviceMotionEvent.requestPermission==="function") { // iOS 13+ devices
+    if (mobileDevice && typeof DeviceMotionEvent.requestPermission==="function" && !gyroControlActive) { // iOS 13+ devices
         DeviceMotionEvent.requestPermission()
           .then((state)=>{
             if (state==="granted") {
@@ -154,6 +156,8 @@ $(document).on('turbolinks:load', function() {
             } else {
               console.error("Motion sensor access denied.");}})
           .catch(console.error);
+      } else if (gyroControlActive){
+        gyroControlActive = false;
       } else { // non iOS 13+ devices
         direction();
       }
