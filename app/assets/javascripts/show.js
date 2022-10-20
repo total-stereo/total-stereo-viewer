@@ -41,8 +41,8 @@ $(document).on('turbolinks:load', function() {
   app.stage.filters = [displacementFilter];
 
   window.onmousemove = function(e) {
-    displacementFilter.scale.x = (window.innerWidth / 2 - e.clientX) /30;
-    displacementFilter.scale.y = (window.innerHeight / 2 - e.clientY) /30;
+    displacementFilter.scale.x = (window.innerWidth / 2 - e.clientX) /35;
+    displacementFilter.scale.y = (window.innerHeight / 2 - e.clientY) /35;
     //console.log(displacementFilter.scale.x + " " + displacementFilter.scale.y);
   };
   window.ontouchmove = function(e) {
@@ -130,8 +130,8 @@ $(document).on('turbolinks:load', function() {
           gyroControlActive = true;
         }
       
-        displacementFilter.scale.x = -(initLeftToRight - leftToRight) % 360 * 2;
-        displacementFilter.scale.y = -(initFrontToBack - frontToBack) % 360 * 2;
+        displacementFilter.scale.x = -(initLeftToRight - leftToRight) % 360 * 1.4;
+        displacementFilter.scale.y = -(initFrontToBack - frontToBack) % 360 * 1.4;
       
 
         //console.log(" " + displacementFilter.scale.y + " " + -(initFrontToBack - frontToBack));
