@@ -5,7 +5,7 @@ div class="container start"
         div.about-upper-left-corner.black-nav-element
           | About
     .col-3.offset-1
-      img src=asset_path("Total_Stereo.png") alt="Logo: Total Stereo" class="total-stereo-logo"
+      img.img-fluid src=asset_path("Total_Stereo.png") alt="Logo: Total Stereo" class="total-stereo-logo"
       
 
   /.row
@@ -17,13 +17,11 @@ div class="container start"
   
   .row
     .col-3
-    .col-6
-      div id="carouselAnimation" class="carousel slide carousel-fade carousel-dark" data-bs-ride="carousel" data-bs-touch="false"
-        - ["box_slides/box_01.jpg"].each_with_index do |image_name, index|
-          div.carousel-item data-bs-interval="700" class=(index == 0 ? "active" :"") 
-            a href="/index/dia"
-              img.d-block.w-100 src=asset_path(image_name)
-              div.carousel-caption.d-none.d-md-block
+    .col-6.entrypoint-animation-col
+      a href="/index/dia"
+        img.entrypoint-animation.img-fluid
+        - ["box1.jpg","box2.jpg","box3.jpg","box2.jpg"].each do |image_name|
+          div data-src=asset_path("slides/"+image_name)
     .col-1   
     .col-2
       a href="/index/dia"
@@ -36,23 +34,19 @@ div class="container start"
         .entrypoint-label-col-left.black-nav-element
           span 2.5D Fotos
     .col-1
-    .col-6
-      div id="carouselAnimation" class="carousel slide carousel-fade carousel-dark" data-bs-ride="carousel" data-bs-touch="false"
-        - ["stereoscope_slides/stereoscope_01.jpg"].each_with_index do |image_name, index|
-          div.carousel-item data-bs-interval="700" class=(index == 0 ? "active" :"") 
-            a href="/index/stereo"
-              img.d-block.w-100 src=asset_path(image_name)
-              div.carousel-caption.d-none.d-md-block
+    .col-6.entrypoint-animation-col
+      a href="/index/stereo"
+        img.entrypoint-animation.img-fluid
+        - ["stereo1.jpg","stereo2.jpg","stereo3.jpg","stereo2.jpg"].each do |image_name|
+          div data-src=asset_path("slides/"+image_name)
   
   .row
     .col-3
-    .col-6
-      div id="carouselAnimation" class="carousel slide carousel-fade carousel-dark" data-bs-ride="carousel" data-bs-touch="false"
-        - ["anaglyph_slides/anaglyph_01.jpg"].each_with_index do |image_name, index|
-          div.carousel-item data-bs-interval="700" class=(index == 0 ? "active" :"") 
-            a href="/index/anaglyph"
-              img.d-block.w-100 src=asset_path(image_name)
-              div.carousel-caption.d-none.d-md-block
+    .col-6.entrypoint-animation-col
+      a href="/index/anaglyph"
+        img.entrypoint-animation.img-fluid
+        - ["glass1.jpg","glass2.jpg","glass3.jpg","glass2.jpg"].each do |image_name|
+          div data-src=asset_path("slides/"+image_name)
     
     .col-1   
     .col-2
