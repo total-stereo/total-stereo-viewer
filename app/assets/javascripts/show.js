@@ -64,7 +64,7 @@ $(document).on('turbolinks:load', function() {
     mobileDevice = true;
     $("#startButton").on("click",enableSensor);
   }catch{
-    $("#startButton").hide();
+    //$("#startButton").hide();
     console.log("DeviceMotionEvent is not defined");
   }
   
