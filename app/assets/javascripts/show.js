@@ -15,6 +15,7 @@ $(document).on('turbolinks:load', function() {
   document.body.appendChild(app.view);*/
   
   var app = new PIXI.Application({ view: canvas})
+  app.ticker.maxFPS = 40;
   var alpha;
   var beta;
 
