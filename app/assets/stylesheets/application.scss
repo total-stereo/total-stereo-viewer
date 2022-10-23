@@ -19,24 +19,10 @@
 
 a { text-decoration: none;}
 
-@font-face {
-  font-family: 'PermanentMarker';
-  src:font-url('PermanentMarker-Regular.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'Pangolin';
-  src:font-url('Pangolin-Regular.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
+
 @font-face {
   font-family: 'Ultra';
   src:font-url('Ultra-Regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
-}
-body{
-  font-family: "Pangolin";
 }
