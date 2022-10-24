@@ -32,7 +32,7 @@ class HomeController < ApplicationController
       @imgpath = "dia_imgs/images/" + @file_name
     elsif @mode == "anaglyph"
       @file_name = anaglyph_image_names[index]
-      @imgpath = "anaglyph_imgs/images/" + @file_name
+      @imgpath = "/images/" + @file_name
     end
     
     
@@ -65,7 +65,7 @@ class HomeController < ApplicationController
   end
   def anaglyph_image_names
     Rails.cache.fetch("anaglyph_file_list", expires_in: 30.minutes) do
-      return Dir.glob("#{Rails.public_path}/../app/assets/images/anaglyph_imgs/images/*").each{|str| str.gsub!("#{Rails.public_path}/../app/assets/images/anaglyph_imgs/images/","")}.sort
+      return Dir.glob("#{Rails.public_path}/../app/assets/images//images/*").each{|str| str.gsub!("#{Rails.public_path}/../app/assets/images//images/","")}.sort
     end
   end
 end
